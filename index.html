@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+  </head>
+<body>
+   <div class="criteria">
+    <div class="nav">
+        <div class="nav_title">
+            <div class="nav_circle"></div>
+            <p>Criteria Builder</p>
+        </div>
+    </div>
+    <div class="main_criteria">
+    <div class="header">
+        <div class="container">
+            <div class="header_content">
+            <ul class="header_list">
+            <li>Criteria Builder</li>
+            <li>Add New Criteria name</li>
+          </ul>
+          <div class="notifcation_cotnet">
+            <i class="fa-sharp fa-regular fa-bell"></i>
+            <img src="./images/portfolio.jpg"/>
+          </div>
+        </div>
+
+        </div>
+
+    </div>
+    <div class="main_content">
+        <div class="main">
+        <div class="main_top">
+        <div class="main_search">
+            <p>Criteria name</p>
+            <input placeholder="Criteria name here..."/>
+        </div>
+        <div class="arrows_buttons">
+            <i class="fa-solid fa-arrow-left"></i>
+            <i class="fa-solid fa-arrow-right"></i>        
+        </div>
+    </div>
+    <div class="criteria-container">
+        <div class="condition">
+            <h3>Criteria rules</h3>
+          <h3 class="condition-title"><span>AND</span>: Meet all conditions</h3>
+          <ul class="criteria-list">
+            <li>Commercials-invoice = List_type (Import Bill, Export Bill)</li>
+            <li>Commercials-invoice = String_comparer Currency (NOT_Equal_undefined, [USD, AED, EUR])</li>
+            <li>Commercials-invoice = In_Group Country-of-origin (Black_list, [لائحة البلدان المحظورة])</li>
+          </ul>
+        </div>
+        <!-- Repeat for OR and NOT conditions -->
+      </div>
+    </div>
+    <div class="main_actions">
+        <h3>Action on Criteria rule</h3>
+    </div>
+</div>
+
+</div>
+
+   </div>
+      
+</body>
+</html>
