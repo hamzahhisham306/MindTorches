@@ -281,3 +281,20 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         });
     }
 }
+document.getElementById('menu').addEventListener('click', function() {
+    var submenu = document.getElementById('submenu');
+    if (submenu.style.display === "block") {
+      submenu.style.display = "none";
+    } else {
+      submenu.style.display = "block";
+    }
+  });
+
+  document.getElementById('menu_two').addEventListener('click', function() {
+    var submenu = document.getElementById('submenu_two');
+    if (submenu.style.display === "block") {
+      submenu.style.display = "none";
+    } else {
+      submenu.style.display = "block";
+    }
+  });

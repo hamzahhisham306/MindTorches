@@ -24,6 +24,113 @@
   </head>
   <body>
     <div class="criteria">
+      <div class="overlay"></div>
+      <div class="in_list">
+        <div class="in_list_container">
+          <div class="in_list_top">
+            <h3>Add "In List"</h3>
+            <i class="bi bi-x"></i>
+          </div>
+          <div class="in_list_middle">
+            <div class="in_list_left">
+              <div class="container_search">
+                <label for="searchField">Field</label>
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search here..."
+                    id="searchField"
+                    aria-label="Search here..."
+                    aria-describedby="basic-addon2"
+                  />
+                  <div class="input-group-append">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.9268 17.04L20.4 20.4M11.4 7.19998C13.3882 7.19998 15 8.81175 15 10.8M19.28 11.44C19.28 15.7699 15.7699 19.28 11.44 19.28C7.11006 19.28 3.59998 15.7699 3.59998 11.44C3.59998 7.11006 7.11006 3.59998 11.44 3.59998C15.7699 3.59998 19.28 7.11006 19.28 11.44Z" stroke="#494450" stroke-width="1.5" stroke-linecap="round"/>
+                      </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="filed_list">
+                                 
+                <p id="menu"> <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.8 1.5999L6.00005 6.3999L1.20005 1.5999" stroke="#494450" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>Commercials-invoice</p>
+                <ul id="submenu">
+                  <li>invoice-type</li>
+                  <li>Country-of-raigin</li>
+                  <li>Currency</li>
+                  <li>type</li>
+                </ul>
+
+              </div>
+              <div class="filed_list">
+                                 
+                <p id="menu_two"> <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.8 1.5999L6.00005 6.3999L1.20005 1.5999" stroke="#494450" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>HBItems - بنود بوليصة الشحن</p>
+                <ul id="submenu_two">
+                  <li>trade mark</li>
+                  <li>Item description</li>
+                  <li>Date of shipment</li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="in_list_right">
+              <div class="container_search">
+                <label for="searchField">List</label>
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search here..."
+                    id="searchField"
+                    aria-label="Search here..."
+                    aria-describedby="basic-addon2"
+                  />
+                  <div class="input-group-append">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.9268 17.04L20.4 20.4M11.4 7.19998C13.3882 7.19998 15 8.81175 15 10.8M19.28 11.44C19.28 15.7699 15.7699 19.28 11.44 19.28C7.11006 19.28 3.59998 15.7699 3.59998 11.44C3.59998 7.11006 7.11006 3.59998 11.44 3.59998C15.7699 3.59998 19.28 7.11006 19.28 11.44Z" stroke="#494450" stroke-width="1.5" stroke-linecap="round"/>
+                      </svg>
+                  </div>
+               
+                </div>
+              </div>
+              <div class="checkboxs">
+                <div class="check_box">
+                <input class="custom-checkbox" type="checkbox"/>
+                <label>AUD (Australian Dollar)</label>
+              </div>
+              <div class="check_box">
+                <input class="custom-checkbox" type="checkbox"/>
+                <label>SP (Syrian pound)</label>
+              </div>
+              <div class="check_box">
+                <input class="custom-checkbox" type="checkbox"/>
+                <label>CHF (Swiss Franc)</label>
+              </div>
+              <div class="check_box">
+                <input class="custom-checkbox" type="checkbox"/>
+                <label>USD (United States Dollar)</label>
+              </div>
+              <div class="check_box">
+                <input class="custom-checkbox" type="checkbox"/>
+                <label>DKK (Danish Kroner)</label>
+              </div>
+              <div class="check_box">
+                <input class="custom-checkbox" type="checkbox"/>
+                <label>EUR (Euro)</label>
+              </div>
+              <div class="check_box">
+                <input class="custom-checkbox" type="checkbox"/>
+                <label>EUR</label>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="nav">
         <div class="nav_title">
           <div class="nav_circle"></div>
@@ -75,7 +182,12 @@
                   <select class="commercial">
                     <option>Commercials-invoice</option>
                   </select>
-                  <select name="countries" id="countries" multiple class="commercial">
+                  <select
+                    name="countries"
+                    id="countries"
+                    multiple
+                    class="commercial"
+                  >
                     <option value="1">USD</option>
                     <option value="2">JD</option>
                     <option value="3">SU</option>
@@ -116,7 +228,7 @@
                     <option>Currency</option>
                   </select>
                   <select>
-                    <option>≠ NOT Equal </option>
+                    <option>≠ NOT Equal</option>
                   </select>
                   <select>
                     <option>Match Any</option>
@@ -150,7 +262,11 @@
                     <select class="commercial">
                       <option>Commercials-invoice</option>
                     </select>
-                    <select name="criteria_middle" id="criteria_middle" multiple>
+                    <select
+                      name="criteria_middle"
+                      id="criteria_middle"
+                      multiple
+                    >
                       <option value="1">USD</option>
                       <option value="2">JD</option>
                       <option value="3">SU</option>
@@ -236,12 +352,16 @@
                       <option>Currency</option>
                     </select>
                     <select>
-                      <option>≠ NOT Equal </option>
+                      <option>≠ NOT Equal</option>
                     </select>
                     <select>
                       <option>Match Any</option>
                     </select>
-                    <select name="stringselecttwo" id="stringselecttwo" multiple>
+                    <select
+                      name="stringselecttwo"
+                      id="stringselecttwo"
+                      multiple
+                    >
                       <option value="1">USD</option>
                       <option value="2">JD</option>
                       <option value="3">SU</option>
@@ -258,21 +378,25 @@
                     <button>+ Add New Group</button>
                     <button>+ Add filter</button>
                   </div>
-                  
                 </div>
                 <div class="main_bottom">
                   <div class="main_bottom_buttons">
-                    <button class="close"><i class="bi bi-x-circle"></i>Close</button>
-                    <button class="reload"> <i class="bi bi-arrow-clockwise"></i> Reload Criteria</button>
+                    <button class="close">
+                      <i class="bi bi-x-circle"></i>Close
+                    </button>
+                    <button class="reload">
+                      <i class="bi bi-arrow-clockwise"></i> Reload Criteria
+                    </button>
                     <button class="create">+ Create new</button>
-                    <button class="save"><i class="bi bi-download"></i>
-                      Save</button>
+                    <button class="save">
+                      <i class="bi bi-download"></i> Save
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div class="new_actions">
             <h3>Action on Criteria rule</h3>
             <div class="actions_list">
@@ -297,6 +421,6 @@
     new MultiSelectTag("countriesgroup");
     new MultiSelectTag("stringselect");
     new MultiSelectTag("criteria_middle");
-    new MultiSelectTag("stringselecttwo")
+    new MultiSelectTag("stringselecttwo");
   </script>
 </html>
