@@ -59,31 +59,220 @@
             </div>
             <div class="criteria-container">
               <div class="condition">
-               <h3>Criteria rules</h3>
-               <div class="operation_list">
-                <ul>
+                <h3>Criteria rules</h3>
+                <div class="operation_list">
+                  <ul>
                     <li>AND</li>
                     <li>OR</li>
                     <li>NOT</li>
-                </ul>
-                <p><i class="bi bi-clipboard"></i> Paste</p>
-               </div>
-               <div class="rules_list">
-                <select>
+                  </ul>
+                  <p><i class="bi bi-clipboard"></i> Paste</p>
+                </div>
+                <div class="rules_list">
+                  <select>
                     <option>In_List</option>
-                </select>
-                <select>
+                  </select>
+                  <select class="commercial">
                     <option>Commercials-invoice</option>
-                </select>
-                <select>
-                    <option>In_List</option>
-                </select>
-               </div>
+                  </select>
+                  <select name="countries" id="countries" multiple class="commercial">
+                    <option value="1">USD</option>
+                    <option value="2">JD</option>
+                    <option value="3">SU</option>
+                    <option value="4">BD</option>
+                    <option value="5">RO</option>
+                  </select>
+                  <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                </div>
+                <div class="rules_list">
+                  <select class="selectgroup">
+                    <option>In_Group</option>
+                  </select>
+                  <select class="commercial">
+                    <option>Commercials-invoice</option>
+                  </select>
+                  <select name="countriesgroup" id="countriesgroup" multiple>
+                    <option value="1">USD</option>
+                    <option value="2">JD</option>
+                    <option value="3">SU</option>
+                    <option value="4">BD</option>
+                    <option value="5">RO</option>
+                  </select>
+                  <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                </div>
+                <div class="rules_list">
+                  <select class="comparerselect">
+                    <option>String_comparer</option>
+                  </select>
+                  <select>
+                    <option>Currency</option>
+                  </select>
+                  <select>
+                    <option>≠ NOT Equal </option>
+                  </select>
+                  <select>
+                    <option>Match Any</option>
+                  </select>
+                  <select name="stringselect" id="stringselect" multiple>
+                    <option value="1">USD</option>
+                    <option value="2">JD</option>
+                    <option value="3">SU</option>
+                    <option value="4">BD</option>
+                    <option value="5">RO</option>
+                  </select>
+                  <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                </div>
+                <div class="criteria_middle">
+                  <div class="operation_list">
+                    <ul>
+                      <li>AND</li>
+                      <li>OR</li>
+                      <li>NOT</li>
+                    </ul>
+                    <p><i class="bi bi-clipboard"></i> Paste</p>
+                  </div>
+                  <div class="rules_list">
+                    <select>
+                      <option>In_List</option>
+                    </select>
+                    <select class="commercial">
+                      <option>Commercials-invoice</option>
+                    </select>
+                    <select name="criteria_middle" id="criteria_middle" multiple>
+                      <option value="1">USD</option>
+                      <option value="2">JD</option>
+                      <option value="3">SU</option>
+                      <option value="4">BD</option>
+                      <option value="5">RO</option>
+                    </select>
+                    <div class="dots">
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                    </div>
+                  </div>
+                  <div class="rules_list">
+                    <select class="middle_builder">
+                      <option>Expression_builder</option>
+                    </select>
+                    <select class="commercial">
+                      <option>Base_shipping</option>
+                    </select>
+                    <select class="commercial">
+                      <option>Country_of_origin</option>
+                    </select>
+                    <div class="dots">
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                    </div>
+                  </div>
+                  <div class="middle_rules">
+                    <select>
+                      <option>Base_shipping</option>
+                    </select>
+                    <select>
+                      <option>Country_of_origin</option>
+                    </select>
+                    <div class="dots trash">
+                      <i class="bi bi-trash"></i>
+                    </div>
+                  </div>
+                  <div class="middle_rules">
+                    <select>
+                      <option>Base_shipping</option>
+                    </select>
+                    <select>
+                      <option>Country_of_origin</option>
+                    </select>
+                    <div class="dots trash">
+                      <i class="bi bi-trash"></i>
+                    </div>
+                  </div>
+                  <div class="middle_rules">
+                    <select disabled>
+                      <option>Base_shipping</option>
+                    </select>
+                    <select disabled>
+                      <option>Country_of_origin</option>
+                    </select>
+                    <div class="dots">
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                    </div>
+                  </div>
+                  <div class="middle_rules_buttons">
+                    <button>+ Add New Group</button>
+                    <button>+ Add filter</button>
+                  </div>
+                </div>
+                <div class="criteria_middle">
+                  <div class="operation_list">
+                    <ul>
+                      <li>AND</li>
+                      <li>OR</li>
+                      <li>NOT</li>
+                    </ul>
+                    <p><i class="bi bi-clipboard"></i> Paste</p>
+                  </div>
+                  <div class="rules_list">
+                    <select class="comparerselect">
+                      <option>String_comparer</option>
+                    </select>
+                    <select>
+                      <option>Currency</option>
+                    </select>
+                    <select>
+                      <option>≠ NOT Equal </option>
+                    </select>
+                    <select>
+                      <option>Match Any</option>
+                    </select>
+                    <select name="stringselecttwo" id="stringselecttwo" multiple>
+                      <option value="1">USD</option>
+                      <option value="2">JD</option>
+                      <option value="3">SU</option>
+                      <option value="4">BD</option>
+                      <option value="5">RO</option>
+                    </select>
+                    <div class="dots">
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                    </div>
+                  </div>
+                  <div class="middle_rules_buttons">
+                    <button>+ Add New Group</button>
+                    <button>+ Add filter</button>
+                  </div>
+                  
+                </div>
+                <div class="main_bottom">
+                  <div class="main_bottom_buttons">
+                    <button class="close"><i class="bi bi-x-circle"></i>Close</button>
+                    <button class="reload"> <i class="bi bi-arrow-clockwise"></i> Reload Criteria</button>
+                    <button class="create">+ Create new</button>
+                    <button class="save"><i class="bi bi-download"></i>
+                      Save</button>
+                  </div>
+                </div>
               </div>
-              
             </div>
-          
           </div>
+          
           <div class="new_actions">
             <h3>Action on Criteria rule</h3>
             <div class="actions_list">
@@ -102,4 +291,12 @@
   </body>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/bootstrap.bundle.min.js.map"></script>
+  <script src="js/index.js"></script>
+  <script>
+    new MultiSelectTag("countries");
+    new MultiSelectTag("countriesgroup");
+    new MultiSelectTag("stringselect");
+    new MultiSelectTag("criteria_middle");
+    new MultiSelectTag("stringselecttwo")
+  </script>
 </html>
