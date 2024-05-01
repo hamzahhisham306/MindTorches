@@ -25,11 +25,11 @@
   <body>
     <div class="criteria">
       <div class="overlay"></div>
-      <div class="in_list">
+      <div class="in_list_overlay">
         <div class="in_list_container">
           <div class="in_list_top">
             <h3>Add "In List"</h3>
-            <i class="bi bi-x"></i>
+            <i class="bi bi-x" id="closeInList"></i>
           </div>
           <div class="in_list_middle">
             <div class="in_list_left">
@@ -99,34 +99,44 @@
               </div>
               <div class="checkboxs">
                 <div class="check_box">
-                <input class="custom-checkbox" type="checkbox"/>
-                <label>AUD (Australian Dollar)</label>
+                  <input class="custom-checkbox" type="checkbox" value="AUD"/>
+                  <label>AUD (Australian Dollar)</label>
+                </div>
+                <div class="check_box">
+                  <input class="custom-checkbox" type="checkbox" value="SP"/>
+                  <label>SP (Syrian pound)</label>
+                </div>
+                <div class="check_box">
+                  <input class="custom-checkbox" type="checkbox" value="CHF"/>
+                  <label>CHF (Swiss Franc)</label>
+                </div>
+                <div class="check_box">
+                  <input class="custom-checkbox" type="checkbox" value="USD"/>
+                  <label>USD (United States Dollar)</label>
+                </div>
+                <div class="check_box">
+                  <input class="custom-checkbox" type="checkbox" value="DKK"/>
+                  <label>DKK (Danish Kroner)</label>
+                </div>
+                <div class="check_box">
+                  <input class="custom-checkbox" type="checkbox" value="EUR"/>
+                  <label>EUR (Euro)</label>
+                </div>
+                <div class="check_box">
+                  <input class="custom-checkbox" type="checkbox" value="EUR"/>
+                  <label>EUR</label>
+                </div>
               </div>
-              <div class="check_box">
-                <input class="custom-checkbox" type="checkbox"/>
-                <label>SP (Syrian pound)</label>
-              </div>
-              <div class="check_box">
-                <input class="custom-checkbox" type="checkbox"/>
-                <label>CHF (Swiss Franc)</label>
-              </div>
-              <div class="check_box">
-                <input class="custom-checkbox" type="checkbox"/>
-                <label>USD (United States Dollar)</label>
-              </div>
-              <div class="check_box">
-                <input class="custom-checkbox" type="checkbox"/>
-                <label>DKK (Danish Kroner)</label>
-              </div>
-              <div class="check_box">
-                <input class="custom-checkbox" type="checkbox"/>
-                <label>EUR (Euro)</label>
-              </div>
-              <div class="check_box">
-                <input class="custom-checkbox" type="checkbox"/>
-                <label>EUR</label>
-              </div>
-              </div>
+            </div>
+          </div>
+          <div id="selectedValues"></div>
+          <div class="in_list_bottom">
+            <button class="reset">
+              Reset
+            </button>
+            <div class="in_list_buttons">
+              <button class="cancel">Cancel</button>
+              <button class="add">Add</button>
             </div>
           </div>
         </div>
@@ -142,7 +152,9 @@
           <div class="container">
             <div class="header_content">
               <ul class="header_list">
-                <li>Criteria Builder</li>
+                <li><a href="./index.html">
+                  Criteria Builder
+                </a></li>
                 <li>Add New Criteria name</li>
               </ul>
               <div class="notifcation_cotnet">

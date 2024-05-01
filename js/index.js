@@ -13,26 +13,26 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         drawer = null,
         ul = null;
 
-    
+
     var tagColor = customs.tagColor || {};
     tagColor.textColor = "#332D3B";
     tagColor.borderColor = "#F3F2F3";
     tagColor.bgColor = "#F3F2F3";
 
-    
+
     var domParser = new DOMParser();
 
     init();
 
     function init() {
-        
+
         element = document.getElementById(el);
         createElements();
         initOptions();
         enableItemSelection();
         setValues(false);
 
-        
+
         button.addEventListener('click', () => {
             if (drawer.classList.contains('hidden')) {
                 initOptions();
@@ -64,7 +64,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
                 if ((e.target.nodeName !== "LI") && (e.target.getAttribute("class") !== "input_checkbox")) {
                     drawer.classList.add('hidden');
                 } else {
-                    
+
                     enableItemSelection();
                 }
             }
@@ -72,11 +72,11 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     }
 
     function createElements() {
-       
+
         options = getOptions();
         element.classList.add('hidden');
 
-       
+
         customSelectContainer = document.createElement('div');
         customSelectContainer.classList.add('mult-select-tag');
 
@@ -92,7 +92,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
             body.classList.add('rounded');
         }
 
-      
+
         inputContainer = document.createElement('div');
         inputContainer.classList.add('input-container');
 
@@ -109,7 +109,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         btnContainer = document.createElement('div');
         btnContainer.classList.add('btn-container');
 
-        
+
         button = document.createElement('button');
         button.type = 'button';
         btnContainer.append(button);
@@ -140,7 +140,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         customSelectContainer.appendChild(wrapper);
         customSelectContainer.appendChild(drawer);
 
-     
+
         if (element.nextSibling) {
             element.parentNode.insertBefore(customSelectContainer, element.nextSibling);
         } else {
@@ -149,7 +149,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     }
 
     function createElementInSelectList(option, val, selected = false) {
-       
+
         const li = document.createElement('li');
         li.innerHTML = "<input type='checkbox' style='margin:0 0.5em 0 0' class='input_checkbox'>"; // add the checkbox at the left of the <li>
         li.innerHTML += option.label;
@@ -157,14 +157,14 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         const checkbox = li.firstChild;
         checkbox.dataset.value = option.value;
 
-        
+
         if (val && option.label.toLowerCase().startsWith(val.toLowerCase())) {
             ul.appendChild(li);
         } else if (!val) {
             ul.appendChild(li);
         }
 
-       
+
         if (selected) {
             li.style.backgroundColor = tagColor.bgColor;
             checkbox.checked = true;
@@ -174,11 +174,11 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     function initOptions(val = null) {
         ul.innerHTML = '';
         for (var option of options) {
-           
+
             if (option.selected) {
                 !isTagSelected(option.value) && createTag(option);
 
-                
+
                 createElementInSelectList(option, val, true);
             } else {
                 createElementInSelectList(option, val);
@@ -187,7 +187,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     }
 
     function createTag(option) {
-        
+
         const itemDiv = document.createElement('div');
         itemDiv.classList.add('item-container');
         itemDiv.style.color = tagColor.textColor || '#2c7a7b';
@@ -218,7 +218,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     }
 
     function enableItemSelection() {
-       
+
         for (var li of ul.children) {
             li.addEventListener('click', (e) => {
                 if (options.find((o) => o.value == e.target.dataset.value).selected === false) {
@@ -226,7 +226,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
                     input.value = null;
                     initOptions();
                     setValues();
-    
+
                 } else {
                     options.find((o) => o.value == e.target.dataset.value).selected = false;
                     input.value = null;
@@ -239,7 +239,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     }
 
     function isTagSelected(val) {
-        
+
         for (var child of inputContainer.children) {
             if (!child.classList.contains('input-body') && child.firstChild.dataset.value == val) {
                 return true;
@@ -249,7 +249,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     }
 
     function removeTag(val) {
-       
+
         for (var child of inputContainer.children) {
             if (!child.classList.contains('input-body') && child.firstChild.dataset.value == val) {
                 inputContainer.removeChild(child);
@@ -258,7 +258,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     }
 
     function setValues(fireEvent = true) {
-        
+
         selected_values = [];
         for (var i = 0; i < options.length; i++) {
             element.options[i].selected = options[i].selected;
@@ -281,20 +281,83 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         });
     }
 }
-document.getElementById('menu').addEventListener('click', function() {
+document.getElementById('menu').addEventListener('click', function () {
     var submenu = document.getElementById('submenu');
     if (submenu.style.display === "block") {
-      submenu.style.display = "none";
+        submenu.style.display = "none";
     } else {
-      submenu.style.display = "block";
+        submenu.style.display = "block";
     }
-  });
+});
 
-  document.getElementById('menu_two').addEventListener('click', function() {
+document.getElementById('menu_two').addEventListener('click', function () {
     var submenu = document.getElementById('submenu_two');
     if (submenu.style.display === "block") {
-      submenu.style.display = "none";
+        submenu.style.display = "none";
     } else {
-      submenu.style.display = "block";
+        submenu.style.display = "block";
     }
+});
+
+
+const checkboxes = document.querySelectorAll('.custom-checkbox');
+  const selectedValuesDiv = document.getElementById('selectedValues');
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        const value = this.value;
+        const label = this.nextElementSibling.textContent;
+        const item = document.createElement('div');
+        item.textContent = label;
+        const removeButton = document.createElement('button');
+        removeButton.innerHTML = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 1L1 11M11 11L1 0.999998" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>` ;
+        removeButton.addEventListener('click', function() {
+          item.remove();
+          checkbox.checked = false;
+        });
+        item.appendChild(removeButton);
+        selectedValuesDiv.appendChild(item);
+      } else {
+        const label = this.nextElementSibling.textContent;
+        const items = selectedValuesDiv.querySelectorAll('div');
+        items.forEach(item => {
+          if (item.textContent.includes(label)) {
+            item.remove();
+          }
+        });
+      }
+    });
   });
+
+  const closeInList = document.getElementById("closeInList");
+  const in_list = document.querySelector(".in_list_overlay");
+  const overlay = document.querySelector(".overlay");
+  const in_listButton = document.querySelector(".in_list");
+  const cancel = document.querySelector(".cancel");
+
+
+  closeInList.addEventListener("click",function(){
+    in_list.classList.remove("show");
+    overlay.classList.remove("show")
+    in_list.classList.add("hidden");
+    overlay.classList.add("hidden")
+   
+  });
+
+  cancel.addEventListener("click", function(){
+    in_list.classList.remove("show");
+    overlay.classList.remove("show")
+    in_list.classList.add("hidden");
+    overlay.classList.add("hidden")
+  })
+  
+  in_listButton.addEventListener("click",function(){
+    in_list.classList.remove("hidden");
+    overlay.classList.remove("hidden")
+    in_list.classList.add("show");
+    overlay.classList.add("show")
+
+  })
