@@ -1,4 +1,5 @@
-
+// let language = 'en'; // Default language is English
+window.addEventListener('DOMContentLoaded', loadLanguageJSON);
 function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     var element = null,
         options = null,
@@ -301,63 +302,108 @@ document.getElementById('menu_two').addEventListener('click', function () {
 
 
 const checkboxes = document.querySelectorAll('.custom-checkbox');
-  const selectedValuesDiv = document.getElementById('selectedValues');
+const selectedValuesDiv = document.getElementById('selectedValues');
 
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-      if (this.checked) {
-        const value = this.value;
-        const label = this.nextElementSibling.textContent;
-        const item = document.createElement('div');
-        item.textContent = label;
-        const removeButton = document.createElement('button');
-        removeButton.innerHTML = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+        if (this.checked) {
+            const value = this.value;
+            const label = this.nextElementSibling.textContent;
+            const item = document.createElement('div');
+            item.textContent = label;
+            const removeButton = document.createElement('button');
+            removeButton.innerHTML = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11 1L1 11M11 11L1 0.999998" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round"/>
         </svg>` ;
-        removeButton.addEventListener('click', function() {
-          item.remove();
-          checkbox.checked = false;
-        });
-        item.appendChild(removeButton);
-        selectedValuesDiv.appendChild(item);
-      } else {
-        const label = this.nextElementSibling.textContent;
-        const items = selectedValuesDiv.querySelectorAll('div');
-        items.forEach(item => {
-          if (item.textContent.includes(label)) {
-            item.remove();
-          }
-        });
-      }
+            removeButton.addEventListener('click', function () {
+                item.remove();
+                checkbox.checked = false;
+            });
+            item.appendChild(removeButton);
+            selectedValuesDiv.appendChild(item);
+        } else {
+            const label = this.nextElementSibling.textContent;
+            const items = selectedValuesDiv.querySelectorAll('div');
+            items.forEach(item => {
+                if (item.textContent.includes(label)) {
+                    item.remove();
+                }
+            });
+        }
     });
-  });
+});
 
-  const closeInList = document.getElementById("closeInList");
-  const in_list = document.querySelector(".in_list_overlay");
-  const overlay = document.querySelector(".overlay");
-  const in_listButton = document.querySelector(".in_list");
-  const cancel = document.querySelector(".cancel");
+const closeInList = document.getElementById("closeInList");
+const in_list = document.querySelector(".in_list_overlay");
+const overlay = document.querySelector(".overlay");
+const in_listButton = document.querySelector(".in_list");
+const cancel = document.querySelector(".cancel");
 
 
-  closeInList.addEventListener("click",function(){
+closeInList.addEventListener("click", function () {
     in_list.classList.remove("show");
     overlay.classList.remove("show")
     in_list.classList.add("hidden");
     overlay.classList.add("hidden")
-   
-  });
 
-  cancel.addEventListener("click", function(){
+});
+
+cancel.addEventListener("click", function () {
     in_list.classList.remove("show");
     overlay.classList.remove("show")
     in_list.classList.add("hidden");
     overlay.classList.add("hidden")
-  })
-  
-  in_listButton.addEventListener("click",function(){
+})
+
+in_listButton.addEventListener("click", function () {
     in_list.classList.remove("hidden");
     overlay.classList.remove("hidden")
     in_list.classList.add("show");
     overlay.classList.add("show")
 
-  })
+})
+function switchLanguage(lang) {
+    language = lang;
+    if (lang === 'ar') {
+        document.documentElement.dir = 'rtl';
+        localStorage.setItem("lang","ar") 
+        loadLanguageJSON(language);
+    } else {
+        document.documentElement.dir = 'ltr'
+        localStorage.setItem("lang","en") 
+        loadLanguageJSON(language);
+    }
+}
+
+function loadLanguageJSON(language) {
+    if(!localStorage.getItem("lang")){
+      localStorage.setItem("lang","en")
+    }
+    if(localStorage.getItem("lang")){
+        if(localStorage.getItem("lang")=="ar"){
+            document.documentElement.dir = 'rtl';
+        }
+        else{
+            document.documentElement.dir = 'ltr'
+        }
+    }
+    fetch(`../lang/${localStorage.getItem("lang")}.json`)
+        .then(response => response.json())
+        .then(data => {
+            console.log("data",data)
+            applyTranslations(data)
+        })
+        .catch(error => console.error('Error loading language JSON:', error));
+}
+function applyTranslations(translations) {
+    for (let key in translations) {
+        const elements = document.querySelectorAll(`[data-translate="${key}"]`);
+        elements.forEach(element => {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.tagName === 'SELECT') {
+                element.value = translations[key];
+            } else {
+                element.innerHTML = translations[key];
+            }
+        });
+    }
+}

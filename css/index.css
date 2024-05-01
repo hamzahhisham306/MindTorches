@@ -112,12 +112,12 @@
   height: 100%;
 }
 .main_new{
-  width: 78%;
+  width: 79%;
   height: 100%;
 }
 .main_content{
   display: flex;
-  padding: 0px 0px 18px 48px;
+  padding: -1px 0px 18px 48px;
   height: 938px;
 }
 .main_top{
@@ -196,7 +196,7 @@
   font-size: 16px;
 }
 
-.condition-title span{
+.condition-title span:nth-child(2){
   color: blue;
   font-weight: 600;
 
@@ -266,9 +266,9 @@
 }
 .actions_list{
   position: relative;
-  right: 45px;
 }
 .actions_list ul{
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   text-align: center;
@@ -291,7 +291,7 @@
   -o-border-radius: 8px;
 }
 .actions_list ul li i{
-  margin-right: 10px;
+ 
 }
 .action_box_one{
   background-color: #FCFCFC;
@@ -370,6 +370,7 @@
 .main_bottom_buttons button{
   border: none;
   padding: 8px 16px 8px 16px;
+  margin-left: 20px;
 
 }
 .main_bottom_buttons button i{
@@ -850,6 +851,13 @@ select option{
   -ms-transition: 1s;
   -o-transition: 1s;
 }
+#submenu  li{
+  margin-bottom: 8px;
+}
+#menu_two li{
+  margin-bottom: 8px;
+
+}
 .check_box{
   display: flex;
   align-items: center;
@@ -858,6 +866,7 @@ select option{
   font-size: 14px;
   color: #494450;
   margin-left: 10px;
+  margin-right: 10px;
   font-weight: 600;
 }
 .custom-checkbox{
@@ -930,6 +939,16 @@ select option{
 }
 .header_list li:first-child a{
   color: #8D8A91;
+}
+.langchange{
+  margin: 10px;
+  border-radius: 8px;
+  padding: 5px;
+  outline: none;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 /* @media (min-width: 768px) {
     .container {

@@ -55,12 +55,12 @@
                                  
                 <p id="menu"> <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.8 1.5999L6.00005 6.3999L1.20005 1.5999" stroke="#494450" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>Commercials-invoice</p>
+                  </svg><span data-translate="commercials-invoice">Commercials-invoice</span></p>
                 <ul id="submenu">
-                  <li>invoice-type</li>
-                  <li>Country-of-raigin</li>
-                  <li>Currency</li>
-                  <li>type</li>
+                  <li data-translate="invoice-type">invoice-type</li>
+                  <li data-translate="Country-of-origin">Country-of-raigin</li>
+                  <li data-translate="Currency_two">Currency</li>
+                  <li data-translate="type">type</li>
                 </ul>
 
               </div>
@@ -70,7 +70,7 @@
                   <path d="M10.8 1.5999L6.00005 6.3999L1.20005 1.5999" stroke="#494450" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>HBItems - بنود بوليصة الشحن</p>
                 <ul id="submenu_two">
-                  <li>trade mark</li>
+                  <li data-translate="trade_mark">trade mark</li>
                   <li>Item description</li>
                   <li>Date of shipment</li>
                 </ul>
@@ -144,7 +144,7 @@
       <div class="nav">
         <div class="nav_title">
           <div class="nav_circle"></div>
-          <p>Criteria Builder</p>
+          <p data-translate="Criteria_Builder">Criteria Builder</p>
         </div>
       </div>
       <div class="main_criteria">
@@ -152,12 +152,17 @@
           <div class="container">
             <div class="header_content">
               <ul class="header_list">
-                <li><a href="./index.html">
+                <li ><a href="./index.html" data-translate="criteria_builder">
                   Criteria Builder
                 </a></li>
-                <li>Add New Criteria name</li>
+                <li ><a href="./newCriteria.html" data-translate="addd_new_criteria_name">Add New Criteria name</a></li>
               </ul>
               <div class="notifcation_cotnet">
+                <select class="langchange" onchange="switchLanguage(this.value)">
+                  <option >lang</option>
+                  <option value="en">EN</option>
+                  <option value="ar">AR</option>
+                </select>
                 <i class="fa-sharp fa-regular fa-bell"></i>
                 <img src="./images/portfolio.jpg" />
               </div>
@@ -168,8 +173,8 @@
           <div class="main_new">
             <div class="main_top">
               <div class="main_search">
-                <p>Criteria name</p>
-                <input placeholder="Criteria name here..." />
+                <p data-translate="criteria_name">Criteria name</p>
+                <input placeholder="Criteria name here..." data-translate="Criteria_name_here" />
               </div>
               <div class="arrows_buttons">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -178,21 +183,21 @@
             </div>
             <div class="criteria-container">
               <div class="condition">
-                <h3>Criteria rules</h3>
+                <h3 data-translate="criteria_rules">Criteria rules</h3>
                 <div class="operation_list">
                   <ul>
-                    <li>AND</li>
-                    <li>OR</li>
-                    <li>NOT</li>
+                    <li data-translate="and">AND</li>
+                    <li data-translate="OR">OR</li>
+                    <li data-translate="Not">NOT</li>
                   </ul>
-                  <p><i class="bi bi-clipboard"></i> Paste</p>
+                  <p><i class="bi bi-clipboard"></i><span data-translate="Paste">Paste</span></p>
                 </div>
                 <div class="rules_list">
                   <select>
-                    <option>In_List</option>
+                    <option data-translate="in_list">In_List</option>
                   </select>
                   <select class="commercial">
-                    <option>Commercials-invoice</option>
+                    <option data-translate="commercials-invoice">Commercials-invoice</option>
                   </select>
                   <select
                     name="countries"
@@ -214,10 +219,10 @@
                 </div>
                 <div class="rules_list">
                   <select class="selectgroup">
-                    <option>In_Group</option>
+                    <option data-translate="in_group">In_Group</option>
                   </select>
                   <select class="commercial">
-                    <option>Commercials-invoice</option>
+                    <option data-translate="commercials-invoice">Commercials-invoice</option>
                   </select>
                   <select name="countriesgroup" id="countriesgroup" multiple>
                     <option value="1">USD</option>
@@ -234,16 +239,16 @@
                 </div>
                 <div class="rules_list">
                   <select class="comparerselect">
-                    <option>String_comparer</option>
+                    <option data-translate="String_comparer">String_comparer</option>
                   </select>
                   <select>
-                    <option>Currency</option>
+                    <option data-translate="Currency_two">Currency</option>
                   </select>
                   <select>
-                    <option>≠ NOT Equal</option>
+                    <option data-translate="≠_NOT_Equal">≠ NOT Equal</option>
                   </select>
                   <select>
-                    <option>Match Any</option>
+                    <option data-translate="Match_Any">Match Any</option>
                   </select>
                   <select name="stringselect" id="stringselect" multiple>
                     <option value="1">USD</option>
@@ -261,18 +266,18 @@
                 <div class="criteria_middle">
                   <div class="operation_list">
                     <ul>
-                      <li>AND</li>
-                      <li>OR</li>
-                      <li>NOT</li>
+                      <li data-translate="and">AND</li>
+                      <li data-translate="OR">OR</li>
+                      <li data-translate="Not">NOT</li>
                     </ul>
-                    <p><i class="bi bi-clipboard"></i> Paste</p>
+                    <p><i class="bi bi-clipboard"></i> <span data-translate="Paste">Paste</span></p>
                   </div>
                   <div class="rules_list">
                     <select>
-                      <option>In_List</option>
+                      <option data-translate="in_list">In_List</option>
                     </select>
                     <select class="commercial">
-                      <option>Commercials-invoice</option>
+                      <option data-translate="commercials-invoice">Commercials-invoice</option>
                     </select>
                     <select
                       name="criteria_middle"
@@ -293,13 +298,13 @@
                   </div>
                   <div class="rules_list">
                     <select class="middle_builder">
-                      <option>Expression_builder</option>
+                      <option data-translate="Expression_builder">Expression_builder</option>
                     </select>
                     <select class="commercial">
-                      <option>Base_shipping</option>
+                      <option data-translate="Base_shipping">Base_shipping</option>
                     </select>
                     <select class="commercial">
-                      <option>Country_of_origin</option>
+                      <option data-translate="Country_of_origin">Country_of_origin</option>
                     </select>
                     <div class="dots">
                       <div class="dot"></div>
@@ -309,10 +314,10 @@
                   </div>
                   <div class="middle_rules">
                     <select>
-                      <option>Base_shipping</option>
+                      <option data-translate="Base_shipping">Base_shipping</option>
                     </select>
                     <select>
-                      <option>Country_of_origin</option>
+                      <option data-translate="Country_of_origin">Country_of_origin</option>
                     </select>
                     <div class="dots trash">
                       <i class="bi bi-trash"></i>
@@ -320,10 +325,10 @@
                   </div>
                   <div class="middle_rules">
                     <select>
-                      <option>Base_shipping</option>
+                      <option data-translate="Base_shipping">Base_shipping</option>
                     </select>
                     <select>
-                      <option>Country_of_origin</option>
+                      <option data-translate="Country_of_origin">Country_of_origin</option>
                     </select>
                     <div class="dots trash">
                       <i class="bi bi-trash"></i>
@@ -331,10 +336,10 @@
                   </div>
                   <div class="middle_rules">
                     <select disabled>
-                      <option>Base_shipping</option>
+                      <option data-translate="Base_shipping">Base_shipping</option>
                     </select>
                     <select disabled>
-                      <option>Country_of_origin</option>
+                      <option data-translate="Country_of_origin">Country_of_origin</option>
                     </select>
                     <div class="dots">
                       <div class="dot"></div>
@@ -350,24 +355,24 @@
                 <div class="criteria_middle">
                   <div class="operation_list">
                     <ul>
-                      <li>AND</li>
-                      <li>OR</li>
-                      <li>NOT</li>
+                      <li data-translate="and">AND</li>
+                      <li data-translate="OR">OR</li>
+                      <li data-translate="Not">NOT</li>
                     </ul>
-                    <p><i class="bi bi-clipboard"></i> Paste</p>
+                    <p><i class="bi bi-clipboard"></i><span data-translate="Paste">Paste</span></p>
                   </div>
                   <div class="rules_list">
                     <select class="comparerselect">
-                      <option>String_comparer</option>
+                      <option data-translate="String_comparer">String_comparer</option>
                     </select>
                     <select>
-                      <option>Currency</option>
+                      <option data-translate="Currency_two">Currency</option>
                     </select>
                     <select>
-                      <option>≠ NOT Equal</option>
+                      <option data-translate="≠_NOT_Equal">≠ NOT Equal</option>
                     </select>
                     <select>
-                      <option>Match Any</option>
+                      <option data-translate="Match_Any">Match Any</option>
                     </select>
                     <select
                       name="stringselecttwo"
@@ -387,21 +392,21 @@
                     </div>
                   </div>
                   <div class="middle_rules_buttons">
-                    <button>+ Add New Group</button>
-                    <button>+ Add filter</button>
+                    <button data-translate="Add_New_Group">+ Add New Group</button>
+                    <button data-translate="Add_filter">+ Add filter</button>
                   </div>
                 </div>
                 <div class="main_bottom">
                   <div class="main_bottom_buttons">
                     <button class="close">
-                      <i class="bi bi-x-circle"></i>Close
+                      <i class="bi bi-x-circle"></i><span data-translate="Close">Close</span>
                     </button>
                     <button class="reload">
-                      <i class="bi bi-arrow-clockwise"></i> Reload Criteria
+                      <i class="bi bi-arrow-clockwise"></i> <span data-translate="Reload_Criteria">Reload Criteria</span>
                     </button>
-                    <button class="create">+ Create new</button>
+                    <button class="create" data-translate="Create_new">+ Create new</button>
                     <button class="save">
-                      <i class="bi bi-download"></i> Save
+                      <i class="bi bi-download"></i> <span data-translate="Save">Save</span>
                     </button>
                   </div>
                 </div>
@@ -413,11 +418,11 @@
             <h3>Action on Criteria rule</h3>
             <div class="actions_list">
               <ul>
-                <li><i class="bi bi-clipboard-x"></i> Copy</li>
-                <li><i class="bi bi-clipboard"></i> Paste</li>
-                <li><i class="bi bi-pencil"></i> Edit</li>
-                <li><i class="bi bi-scissors"></i> Cut</li>
-                <li><i class="bi bi-trash"></i> Delete</li>
+                <li><i class="bi bi-clipboard-x"></i> <span data-translate="Copy">Copy</span></li>
+                <li><i class="bi bi-clipboard"></i> <span data-translate="Paste">Paste</span></li>
+                <li><i class="bi bi-pencil"></i> <span data-translate="Edit">Edit</span></li>
+                <li><i class="bi bi-scissors"></i> <span data-translate="Cut">Cut</span></li>
+                <li><i class="bi bi-trash"></i> <span data-translate="Delete">Delete</span></li>
               </ul>
             </div>
           </div>

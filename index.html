@@ -28,18 +28,19 @@
       <div class="in_list_overlay">
         <div class="in_list_container">
           <div class="in_list_top">
-            <h3>Add "In List"</h3>
+            <h3 data-translate="Add_In_List">Add "In List"</h3>
             <i class="bi bi-x" id="closeInList"></i>
           </div>
           <div class="in_list_middle">
             <div class="in_list_left">
               <div class="container_search">
-                <label for="searchField">Field</label>
+                <label for="searchField" data-translate="Field">Field</label>
                 <div class="input-group mb-3">
                   <input
                     type="text"
                     class="form-control"
                     placeholder="Search here..."
+                    data-translate="Search_here"
                     id="searchField"
                     aria-label="Search here..."
                     aria-describedby="basic-addon2"
@@ -55,12 +56,12 @@
                                  
                 <p id="menu"> <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.8 1.5999L6.00005 6.3999L1.20005 1.5999" stroke="#494450" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>Commercials-invoice</p>
+                  </svg><span data-translate="commercials-invoice">Commercials-invoice</span></p>
                 <ul id="submenu">
-                  <li>invoice-type</li>
-                  <li>Country-of-raigin</li>
-                  <li>Currency</li>
-                  <li>type</li>
+                  <li data-translate="invoice-type">invoice-type</li>
+                  <li data-translate="Country-of-origin_two">Country-of-raigin</li>
+                  <li data-translate="Currency_two">Currency</li>
+                  <li data-translate="type">type</li>
                 </ul>
 
               </div>
@@ -70,22 +71,24 @@
                   <path d="M10.8 1.5999L6.00005 6.3999L1.20005 1.5999" stroke="#494450" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>HBItems - بنود بوليصة الشحن</p>
                 <ul id="submenu_two">
-                  <li>trade mark</li>
-                  <li>Item description</li>
-                  <li>Date of shipment</li>
+                  <li data-translate="trade_mark">trade mark</li>
+                  <li data-translate="Item_description">Item description</li>
+                  <li data-translate="Date_of_shipment">Date of shipment</li>
                 </ul>
 
               </div>
             </div>
             <div class="in_list_right">
               <div class="container_search">
-                <label for="searchField">List</label>
+                <label for="searchField" data-translate="List">List</label>
                 <div class="input-group mb-3">
                   <input
                     type="text"
                     class="form-control"
                     placeholder="Search here..."
                     id="searchField"
+                    data-translate="Search_here"
+
                     aria-label="Search here..."
                     aria-describedby="basic-addon2"
                   />
@@ -131,12 +134,12 @@
           </div>
           <div id="selectedValues"></div>
           <div class="in_list_bottom">
-            <button class="reset">
+            <button class="reset" data-translate="Reset">
               Reset
             </button>
             <div class="in_list_buttons">
-              <button class="cancel">Cancel</button>
-              <button class="add">Add</button>
+              <button class="cancel" data-translate="Close">Cancel</button>
+              <button class="add" data-translate="Add">Add</button>
             </div>
           </div>
         </div>
@@ -144,7 +147,7 @@
       <div class="nav">
         <div class="nav_title">
           <div class="nav_circle"></div>
-          <p>Criteria Builder</p>
+          <p data-translate="Criteria_Builder">Criteria Builder</p>
         </div>
       </div>
       <div class="main_criteria">
@@ -152,12 +155,17 @@
           <div class="container">
             <div class="header_content">
               <ul class="header_list">
-                <li><a href="./index.html">
+                <li ><a href="./index.html" data-translate="criteria_builder">
                   Criteria Builder
                 </a></li>
-                <li><a href="./newCriteria.html">Add New Criteria name</a></li>
+                <li ><a href="./newCriteria.html" data-translate="addd_new_criteria_name">Add New Criteria name</a></li>
               </ul>
               <div class="notifcation_cotnet">
+                <select class="langchange" onchange="switchLanguage(this.value)">
+                  <option >lang</option>
+                  <option value="en">EN</option>
+                  <option value="ar">AR</option>
+                </select>
                 <i class="fa-sharp fa-regular fa-bell"></i>
                 <img src="./images/portfolio.jpg" />
               </div>
@@ -168,8 +176,8 @@
           <div class="main">
             <div class="main_top">
               <div class="main_search">
-                <p>Criteria name</p>
-                <input placeholder="Criteria name here..." />
+                <p data-translate="criteria_name">Criteria name</p>
+                <input placeholder="Criteria name here..." data-translate="Criteria_name_here"/>
               </div>
               <div class="arrows_buttons">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -178,52 +186,58 @@
             </div>
             <div class="criteria-container">
               <div class="condition">
-                <h3>Criteria rules</h3>
+                <h3 data-translate="criteria_rules">Criteria rules</h3>
                 <h3 class="condition-title">
-                  <span><i class="bi bi-caret-down"></i> AND</span>: Meet all
-                  conditions
+                  <span><i class="bi bi-caret-down"></i></span><span data-translate="and">AND</span> <span data-translate="Meet_all_conditions">: Meet all
+                    conditions</span>
                 </h3>
                 <ul class="criteria-list">
                   <li>
-                    Commercials-invoice
-                    <span class="in_list">In_List</span> (Import Bill, Export
-                    Bill)
+                    <span data-translate="commercials-invoice">Commercials-invoice =</span>
+                    <span class="in_list" data-translate="in_list">In_List</span> 
+                    <span data-translate="import_bill_export_bill">(Import Bill, Export
+                      Bill)</span>
                   </li>
                   <li>
-                    Commercials-invoice =
-                    <span class="comparer">String_comparer</span> Currency
-                    (NOT_Equal_undefined, [USD, AED, EUR])
+                    <span data-translate="commercials-invoice">Commercials-invoice =</span>
+                    <span class="comparer" data-translate="String_comparer">String_comparer</span> 
+                    <span data-translate="Currency">Currency
+                      (NOT_Equal_undefined, [USD, AED, EUR])</span>
                   </li>
                   <li>
-                    Commercials-invoice =
-                    <span class="group">In_Group</span> Country-of-origin
-                    (Black_list, لايتم-الاستلام-منها)
+                    <span data-translate="commercials-invoice">Commercials-invoice =</span>
+                    <span class="group" data-translate="In_Group">In_Group</span> 
+                    <span data-translate="Country-of-origin">Country-of-origin
+                      (Black_list, لايتم-الاستلام-منها)</span>
                   </li>
                   <li>
                     <i class="bi bi-caret-down"></i
-                    ><span class="or"> OR : </span>Meet Any conditions
+                    ><span class="or" data-translate="OR"> OR : </span><span data-translate="Meet_all_conditions">Meet Any conditions</span>
                   </li>
                   <ul>
                     <li>
-                      Commercials-invoice
-                      <span class="builder">Expression_builder</span
-                      >Base_shipping, Country_of_origin ([5,000, Syria] -
-                      [20,000, Lebanon] - [880,551, Jordan])
+                      <span data-translate="commercials-invoice">Commercials-invoice =</span>
+                      <span class="builder" data-translate="Expression_builder">Expression_builder</span
+                      >
+                      <span>Base_shipping, Country_of_origin ([5,000, Syria] -
+                        [20,000, Lebanon] - [880,551, Jordan])</span>
                     </li>
                     <li>
-                      Commercials-invoice
-                      <span class="group">In_Group</span>Country-of-origin
-                      (Black_list, لايتم-الاستلام-منها)
+                      <span data-translate="commercials-invoice">Commercials-invoice =</span>
+                      <span class="group" data-translate="In_Group">In_Group</span>Country-of-origin
+                       <span>(Black_list, لايتم-الاستلام-منها)</span>
                     </li>
                   </ul>
                   <li>
                     <i class="bi bi-caret-down"></i>
-                    <span class="not"> Not : </span>Do not Meet condition
+                    <span class="not" data-translate="not"> Not : </span>
+                    <span data-translate="Do_not_Meet_condition">Do not Meet condition</span>
                   </li>
                   <li>
-                    Commercials-invoice
-                    <span class="equa">= Equa </span
-                    >Currency (“SP”)
+                    <span data-translate="commercials-invoice">Commercials-invoice =</span>
+                    <span class="equa" data-translate="Equal">= Equa </span
+                    >
+                    <span>Currency (“SP”)</span>
                   </li>
                 </ul>
               </div>
@@ -231,62 +245,62 @@
             </div>
             <div class="main_bottom">
               <div class="main_bottom_buttons">
-                <button class="close"><i class="bi bi-x-circle"></i>Close</button>
-                <button class="reload"> <i class="bi bi-arrow-clockwise"></i> Reload Criteria</button>
-                <button class="create">+ Create new</button>
+                <button class="close"><i class="bi bi-x-circle"></i><span data-translate="Close"> Close</span></button>
+                <button class="reload"> <i class="bi bi-arrow-clockwise"></i><span data-translate="Reload_Criteria">Reload Criteria</span></button>
+                <button class="create">+ <span data-translate="Create_new">Create new</span></button>
                 <button class="save"><i class="bi bi-download"></i>
-                  Save</button>
+                  <span data-translate="Save">Save</span></button>
               </div>
             </div>
           </div>
           <div class="main_actions">
-            <h3>Action on Criteria rule</h3>
+            <h3 data-translate="Action_on_Criteria_rule">Action on Criteria rule</h3>
             <div class="actions_list">
               <ul>
-                <li><i class="bi bi-clipboard-x"></i> Copy</li>
-                <li><i class="bi bi-clipboard"></i> Paste</li>
-                <li><i class="bi bi-pencil"></i> Edit</li>
-                <li><i class="bi bi-scissors"></i> Cut</li>
-                <li><i class="bi bi-trash"></i> Delete</li>
+                <li><i class="bi bi-clipboard-x"></i> <span data-translate="Copy">Copy</span></li>
+                <li ><i class="bi bi-clipboard"></i> <span data-translate="Paste">Paste</span></li>
+                <li ><i class="bi bi-pencil"></i> <span data-translate="Edit">Edit</span></li>
+                <li ><i class="bi bi-scissors"></i> <span data-translate="Cut">Cut</span></li>
+                <li ><i class="bi bi-trash"></i> <span data-translate="Delete">Delete</span></li>
               </ul>
             </div>
-            <h3>Drag & drop to build criteria rule</h3>
+            <h3 data-translate="Drag_drop_to_build_criteria_rule">Drag & drop to build criteria rule</h3>
             <div class="actions_boxs">
               <div class="action_box_one">
-                <h4>Logic Operators</h4>
-                <p>Drag and drop into the criteria rules box where you want</p>
+                <h4 data-translate="Logic_Operators">Logic Operators</h4>
+                <p data-translate="Drag_and_drop_into_the_criteria_rules_box_where_you_want">Drag and drop into the criteria rules box where you want</p>
                 <ul class="actions_oper">
-                  <li>AND</li>
-                  <li>OR</li>
-                  <li>NOT</li>
+                  <li data-translate="and">AND</li>
+                  <li data-translate="or">OR</li>
+                  <li data-translate="not">NOT</li>
                 </ul>
               </div>
               <div class="action_box_one">
-                <h4>Compare multi value</h4>
-                <p>Drag and drop into the criteria rules box where you want</p>
+                <h4 data-translate="Compare_multi_value">Compare multi value</h4>
+                <p data-translate="Drag_and_drop_into_the_criteria_rules_box_where_you_want">Drag and drop into the criteria rules box where you want</p>
                 <ul class="actions_oper_two">
-                  <li class="in_list">In_List</li>
-                  <li class="builder">Expression builder</li>
+                  <li data-translate="in_list" class="in_list">In_List</li>
+                  <li data-translate="Expression_builder" class="builder">Expression builder</li>
                 </ul>
                 <ul class="actions_oper_two">
-                  <li class="comparer">String comparer</li>
-                  <li class="group">In Group</li>
+                  <li class="comparer" data-translate="String_comparer">String comparer</li>
+                  <li data-translate="In_Group" class="group">In Group</li>
                 </ul>
               </div>
               <div class="action_box_one">
-                <h4>Simple Compare</h4>
-                <p>Drag and drop into the criteria rules box where you want</p>
+                <h4 data-translate="SimpleCompare">Simple Compare</h4>
+                <p data-translate="Drag_and_drop_into_the_criteria_rules_box_where_you_want">Drag and drop into the criteria rules box where you want</p>
                 <ul class="actions_oper_two">
-                  <li >= Equal</li>
-                  <li >≠ NOT Equal </li>
+                  <li data-translate="Equal">= Equal</li>
+                  <li data-translate="≠_NOT_Equal">≠ NOT Equal </li>
                 </ul>
                 <ul class="actions_oper_two">
-                  <li >> Greater than</li>
-                  <li >=> Greater than or equal </li>
+                  <li data-translate="Greater_than">> Greater than</li>
+                  <li data-translate="Greater_than_or_equal">=> Greater than or equal </li>
                 </ul>
                 <ul class="actions_oper_two">
-                  <li > &lt; Small than</li>
-                  <li >&lt;= Small than or equal </li>
+                  <li data-translate="Small_than"> &lt; Small than</li>
+                  <li data-translate="Small_than_or_equal">&lt;= Small than or equal </li>
                 </ul>
               </div>
             </div>
