@@ -338,7 +338,8 @@ const in_list = document.querySelector(".in_list_overlay");
 const overlay = document.querySelector(".overlay");
 const in_listButton = document.querySelector(".in_list");
 const cancel = document.querySelector(".cancel");
-
+const loader_conatiner = document.querySelector(".loader_conatiner");
+const overlay_loading = document.querySelector(".overlay_loading");
 
 closeInList.addEventListener("click", function () {
     in_list.classList.remove("show");
@@ -366,31 +367,40 @@ function switchLanguage(lang) {
     language = lang;
     if (lang === 'ar') {
         document.documentElement.dir = 'rtl';
-        localStorage.setItem("lang","ar") 
+        localStorage.setItem("lang", "ar")
         loadLanguageJSON(language);
     } else {
         document.documentElement.dir = 'ltr'
-        localStorage.setItem("lang","en") 
+        localStorage.setItem("lang", "en")
         loadLanguageJSON(language);
     }
 }
 
 function loadLanguageJSON(language) {
-    if(!localStorage.getItem("lang")){
-      localStorage.setItem("lang","en")
+    overlay_loading.classList.add("show");
+    loader_conatiner.classList.add("show");
+
+    setTimeout(() => {
+        overlay_loading.classList.remove("show");
+        loader_conatiner.classList.remove("show");
+        
+    }, 3000)
+
+    if (!localStorage.getItem("lang")) {
+        localStorage.setItem("lang", "en")
     }
-    if(localStorage.getItem("lang")){
-        if(localStorage.getItem("lang")=="ar"){
+    if (localStorage.getItem("lang")) {
+        if (localStorage.getItem("lang") == "ar") {
             document.documentElement.dir = 'rtl';
         }
-        else{
+        else {
             document.documentElement.dir = 'ltr'
         }
     }
     fetch(`../lang/${localStorage.getItem("lang")}.json`)
         .then(response => response.json())
         .then(data => {
-            console.log("data",data)
+            console.log("data", data)
             applyTranslations(data)
         })
         .catch(error => console.error('Error loading language JSON:', error));
