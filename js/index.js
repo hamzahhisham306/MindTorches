@@ -397,13 +397,25 @@ function loadLanguageJSON(language) {
             document.documentElement.dir = 'ltr'
         }
     }
-    fetch(`../lang/${localStorage.getItem("lang")}.json`)
+    if(localStorage.getItem("lang")=="en"){
+        fetch(`../lang/en.json`)
         .then(response => response.json())
         .then(data => {
             console.log("data", data)
             applyTranslations(data)
         })
         .catch(error => console.error('Error loading language JSON:', error));
+    }
+    else{
+        fetch(`../lang/ar.json`)
+        .then(response => response.json())
+        .then(data => {
+            console.log("data", data)
+            applyTranslations(data)
+        })
+        .catch(error => console.error('Error loading language JSON:', error));
+    }
+ 
 }
 function applyTranslations(translations) {
     for (let key in translations) {
