@@ -336,7 +336,7 @@ checkboxes.forEach(checkbox => {
 const closeInList = document.getElementById("closeInList");
 const in_list = document.querySelector(".in_list_overlay");
 const overlay = document.querySelector(".overlay");
-const in_listButton = document.querySelector(".in_list");
+const in_listButton = document.getElementById("in_list_show");
 const cancel = document.querySelector(".cancel");
 const loader_conatiner = document.querySelector(".loader_conatiner");
 const overlay_loading = document.querySelector(".overlay_loading");
@@ -383,40 +383,29 @@ function loadLanguageJSON(language) {
     setTimeout(() => {
         overlay_loading.classList.remove("show");
         loader_conatiner.classList.remove("show");
-        
-    }, 3000)
+    }, 3000);
 
-    if (!localStorage.getItem("lang")) {
-        localStorage.setItem("lang", "en")
-    }
-    if (localStorage.getItem("lang")) {
-        if (localStorage.getItem("lang") == "ar") {
-            document.documentElement.dir = 'rtl';
-        }
-        else {
-            document.documentElement.dir = 'ltr'
-        }
-    }
-    if(localStorage.getItem("lang")=="en"){
-        fetch(`../lang/en.json`)
-        .then(response => response.json())
-        .then(data => {
-            console.log("data", data)
-            applyTranslations(data)
+    const lang = localStorage.getItem("lang") || "en";
+    localStorage.setItem("lang", lang);
+
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+    const langFile = lang === "en" ? "en.json" : "ar.json";
+
+    fetch(`../lang/${langFile}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("There is probelm loading file");
+            }
+            return response.json();
         })
-        .catch(error => console.error('Error loading language JSON:', error));
-    }
-    else{
-        fetch(`../lang/ar.json`)
-        .then(response => response.json())
         .then(data => {
-            console.log("data", data)
-            applyTranslations(data)
+            console.log("data>>>>>>>>>", data);
+            applyTranslations(data);
         })
-        .catch(error => console.error('Error loading language JSON:', error));
-    }
- 
+        .catch(error => console.error("Error Data>>:", error));
 }
+
 function applyTranslations(translations) {
     for (let key in translations) {
         const elements = document.querySelectorAll(`[data-translate="${key}"]`);
